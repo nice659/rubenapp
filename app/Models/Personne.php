@@ -13,6 +13,7 @@ class Personne extends Model
      */
     protected $fillable = array('parant_id', 'order', 'nom');
     public static $rules = array('parent_id'=>'required|integer',
+                                'user_id'=>'required|biginteger',
                                 'order'=>'required|min:6',
                                 'nom'=>'required|min:6',
                             );
@@ -20,6 +21,6 @@ class Personne extends Model
      public function parent()
       {
         return $this->belongsTo(Personne::class,'parent_id');
-      }               
+      }   
 
 }
